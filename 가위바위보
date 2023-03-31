@@ -1,0 +1,50 @@
+package jwbook;
+import java.util.Scanner;
+public class kos {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("컴퓨터와 가위 바위 보 게임을 합니다 \n");
+		String str[] = {"가위", "바위", "보"};
+		
+		while (true) {
+			System.out.println(" 가위 바위 보>>");
+			String text = scanner.nextLine();
+			if(text.equals("그만")) {
+				System.out.println("게임을 종료합니다");
+				break;
+		}
+		
+		int n = (int)(Math.random()*3);
+		
+		if(text.equals("바위")) {
+			if(str[n].equals("가위")) 
+				System.out.println("사용자="+ text+", 컴퓨터="+str[n]+", 사용자가 이겼습니다");
+			else if(str[n].equals("보")) 
+				System.out.println("사용자="+ text+", 컴퓨터="+str[n]+", 사용자가 졌습니다");
+			else 
+				System.out.println("사용자="+ text+", 컴퓨터="+str[n]+", 비겼습니다");
+		}
+		else if(text.equals("가위")) {
+			if(str[n].equals("가위")) 
+				System.out.print("사용자="+ text+", 컴퓨터="+str[n]+", 비겼습니다");
+			else if(str[n].equals("바위")) 
+				System.out.print("사용자="+ text+", 컴퓨터="+str[n]+", 사용자가 졌습니다");
+			else 
+				System.out.print("사용자="+ text+", 컴퓨터="+str[n]+", 사용자가 이겼습니다");
+		}
+		else if(text.equals("보")) {
+			if(str[n].equals("보")) 
+				System.out.print("사용자="+ text+", 컴퓨터="+str[n]+", 비겼습니다");
+			else if(str[n].equals("가위")) 
+				System.out.print("사용자="+ text+", 컴퓨터="+str[n]+", 사용자가 졌습니다");
+			else 
+				System.out.print("사용자="+ text+", 컴퓨터="+str[n]+", 사용자가 이겼습니다");
+		}
+		else {
+			System.out.print("잘못 입력");
+		}
+	}
+		scanner.close();
+  }
+}
