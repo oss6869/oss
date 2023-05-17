@@ -1,0 +1,56 @@
+package jwbook;
+
+import javax.swing.*;
+import java.awt.*;
+
+class NorthPanel extends JPanel{
+	public NorthPanel() {
+		setBackground(Color.MAGENTA);
+		setLayout(new FlowLayout());
+		add(new JButton("Open"));
+		add(new JButton("Close"));
+		add(new JButton("Exit"));
+	}
+}
+class CenterPanel extends JPanel{
+	public CenterPanel() {
+		setLayout(null);
+		for (int i = 1; i < 11; i++) {
+			int x = (int)(Math.random()*200);
+			int y = (int)(Math.random()*200);
+			JLabel label=new JLabel("*");
+            label.setForeground(Color.RED);
+			label.setLocation(x,y);
+			label.setSize(15, 15);
+			label.setOpaque(true);
+			add(label);
+			}
+	}
+}
+class SouthPanel extends JPanel{
+		public SouthPanel() {
+		setBackground(Color.cyan);
+		add(new JButton("Integer Input"));
+		add(new TextField("             "));
+	}
+}
+
+public class pamel extends JFrame{
+	pamel(){
+		setTitle("여러 개의 패널을 가진 프레임");
+		setSize(370, 320);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+NorthPanel nP=new NorthPanel();
+CenterPanel nC=new CenterPanel();
+SouthPanel nS=new SouthPanel();
+add(nP, BorderLayout.NORTH);
+add(nS, BorderLayout.SOUTH);
+add(nC, BorderLayout.CENTER);
+setVisible(true);
+}	
+
+public static void main(String[] args) {
+	new pamel();
+}
+}
